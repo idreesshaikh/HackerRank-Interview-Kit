@@ -1,0 +1,24 @@
+public static String isBalanced(String s) {
+
+            Stack<Character> stack =  new Stack<Character>();
+            char[] x = s.toCharArray();
+            for(char z : x){
+                if(stack.empty()){
+                    stack.push(z);
+                }
+                else{
+                    if(stack.peek()== '{' && z == '}' || stack.peek()== '(' && z == ')' || stack.peek()== '[' && z == ']' ){
+                        stack.pop();
+                    }
+                    else{
+                        stack.push(z);
+                    }
+                }
+            }
+            if(stack.empty()){
+                return "YES";
+            }
+            else{
+                return "NO";
+            }
+        }

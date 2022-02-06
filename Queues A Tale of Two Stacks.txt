@@ -1,0 +1,40 @@
+public static void main(String[] args) {
+        Stack<Integer> enqueue = new Stack<Integer>();
+        Stack<Integer> dequeue = new Stack<Integer>();
+        int lastValue = 0;
+        int firstValue = 0;
+
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+
+        for (int i = 0; i < n; i++) {
+            int operation = scan.nextInt();
+            if (operation == 1) { // enqueue
+                int value = scan.nextInt();
+                if(enqueue.empty() && dequeue.empty()){
+                    lastValue = value;
+                }
+                if(enqueue.empty()){
+                    firstValue = value;
+                }
+                enqueue.push(value);
+            } else if (operation == 2) { // dequeue
+                if(dequeue.empty()){
+                    while(!enqueue.empty()){
+                        dequeue.push(enqueue.pop());
+                    }
+                }
+                dequeue.pop();
+                if(!dequeue.empty()){
+                    lastValue = dequeue.peek();
+                }
+                if(dequeue.empty()){
+                    lastValue = firstValue;
+                }
+            } else if (operation == 3) {
+                System.out.println(lastValue);
+
+            }
+        }
+        scan.close();
+    }

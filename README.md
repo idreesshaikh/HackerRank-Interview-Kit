@@ -1,7 +1,7 @@
-<p style="text-align:center">
-    
+<div style="text-align:center">
+
     # HackerRank-Interview-Kit
-    
-</p>
+
+</div>
 
 *Practicing my problem solving skills!*
