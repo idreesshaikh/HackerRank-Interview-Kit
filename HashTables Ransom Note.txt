@@ -1,0 +1,19 @@
+public static void checkMagazine(List<String> magazine, List<String> note) {
+        
+        Collections.sort(magazine);
+        Collections.sort(note);
+        boolean itContains = false;
+        for(String e : note){
+            if(magazine.contains(e)){
+                magazine.remove(e);
+                itContains = true;
+            }
+            else{
+                itContains = false;
+                break;
+            }
+        }
+        if(itContains) System.out.println("Yes");
+        else System.out.println("No");
+
+    }
