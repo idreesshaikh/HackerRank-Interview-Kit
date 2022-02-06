@@ -1,3 +1,3 @@
-<div style="text-align:center"> # HackerRank-Interview-Kit </div>
+## HackerRank Interview Kit
 
 *Practicing my problem solving skills!*
