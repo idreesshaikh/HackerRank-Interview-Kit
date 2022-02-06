@@ -1,0 +1,23 @@
+public static long repeatedString(String s, long n) {
+        long countCharA = 0;
+        for(long x = 0; x<s.length() && x < n; x++){
+            if(s.toCharArray()[(int) x]=='a'){
+                countCharA+=1;
+            }
+        }
+        if(n > s.length()){
+            long value = (n/s.length());
+            long remainder = (n%s.length());
+            long itr = 0;
+            countCharA = countCharA*value;
+            while(remainder>0){
+                if(s.toCharArray()[(int) itr]=='a'){
+                    countCharA+=1;
+                }
+                itr+=1;
+                remainder-=1;
+            }
+        }
+        return countCharA;
+
+    }
